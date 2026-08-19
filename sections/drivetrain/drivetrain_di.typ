@@ -94,7 +94,7 @@ There are several potential drivetrain types we are considering for use in Overr
 ])
 
 === Mecanum Drive
-#table(columns:(1.1fr,2fr),stroke:none, [#figure(image("../Photos/mecanum.png"),caption:[A simple chassis with a Mecanum Drive \ Source: CS-STEM Network])],[This drivetrain features four Mecanum wheels (wheels with rollers at 45 degree angles) allowing for dynamic movement in all directions.
+#table(columns:(1.1fr,2fr),stroke:none, [#figure(image("../../Photos/mecanum.png"),caption:[A simple chassis with a Mecanum Drive \ Source: CS-STEM Network])],[This drivetrain features four Mecanum wheels (wheels with rollers at 45 degree angles) allowing for dynamic movement in all directions.
 
 #table(
   columns: (1fr, 1fr),
@@ -120,7 +120,7 @@ There are several potential drivetrain types we are considering for use in Overr
 ])
 
 === X-Drive
-#table(columns:(1fr,2fr),stroke:none, [#figure(image("../Photos/XDrive.png"),caption:[A render of an X-Drive Chassis\ Source: Purdue Sigbots])],[This drivetrain features four omni-wheels attached at 45 degree angles, allowing forward motion using vector addition.
+#table(columns:(1fr,2fr),stroke:none, [#figure(image("../../Photos/XDrive.png"),caption:[A render of an X-Drive Chassis\ Source: Purdue Sigbots])],[This drivetrain features four omni-wheels attached at 45 degree angles, allowing forward motion using vector addition.
 
 #table(
   columns: (1fr, 1fr),
@@ -148,7 +148,7 @@ There are several potential drivetrain types we are considering for use in Overr
 
 
 === Asterisk Drive
-#table(columns:(1fr,2fr),stroke:none, [#figure(image("../Photos/asterstfk.png"),caption:[A render of an Asterisk-Drive Chassis\ Source: VEX Forums])],[This drivetrain builds on top of a traditional x drive by adding two extra motors parallel to the two channels on the side, allowing for the maneuverability of an x drive paired with more offensive capabilities.
+#table(columns:(1fr,2fr),stroke:none, [#figure(image("../../Photos/asterstfk.png"),caption:[A render of an Asterisk-Drive Chassis\ Source: VEX Forums])],[This drivetrain builds on top of a traditional x drive by adding two extra motors parallel to the two channels on the side, allowing for the maneuverability of an x drive paired with more offensive capabilities.
 #table(
   columns: (1fr, 1fr),
   inset: 4pt,
