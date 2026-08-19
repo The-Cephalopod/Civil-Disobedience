@@ -13,6 +13,10 @@
 #pagebreak()
 #include "sections/driver_strategy.typ"
 #pagebreak()
+#include "sections/drivetrain/drivetrain_di.typ"
+#pagebreak()
+#include "sections/drivetrain/drivetrain_dp.typ"
+#pagebreak()
 #include "sections/lift/lift_di.typ"
 #pagebreak()
 #include "sections/roller/rollermech_di.typ"
