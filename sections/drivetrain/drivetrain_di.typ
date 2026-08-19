@@ -21,7 +21,7 @@ table.header([*Contributor*], [*Date*],
 There are several potential drivetrain types we are considering for use in Override:
 
 === Tank Drive
-#table(columns:(1fr,2fr),stroke:none, [#figure(image("../../Photos/RobustTankDrive.PNG"),caption:[Model of my team (86832B Robust)'s Tank Drive from High Stakes last year])],[This drivetrain consists of a series of wheels placed on each side of the robot, with motors controlling each respective side allowing for forward, backward, and turning motion.
+#table(columns:(1fr,2fr),stroke:none, [#figure(image("../../Photos/RobustTankDrive.PNG"),caption:[Model of 86832B Robust's Tank Drive from High Stakes last year])],[This drivetrain consists of a series of wheels placed on each side of the robot, with motors controlling each respective side allowing for forward, backward, and turning motion.
 
 #table(
   columns: (1fr, 1fr),
@@ -35,15 +35,17 @@ There are several potential drivetrain types we are considering for use in Overr
   [Simple construction],
   [Limited in motion],
   [Space efficient],
-  [Low in traction],
-  [Easy to program basic functions],
-  [Potentially hard to operate based off variations in wheel type and driver ability\*],
-  [Consistent power output from connected gear train],
   [Harder to program autonomous routines],
-  [Relatively flexible motor count (4, 6, & 5 with effort)]
+  [Easy to program basic functions],
+  [],
+  [Consistent power output from connected gear train],
+  [],
+  [Relatively flexible motor count (4, 6, & 5 with effort)],
+  [],
+  [High traction]
 )
 ])
-\* This will be elaborated on further in the "Wheel Size Analysis & Comparison - DI" Section.
+
 
 === H-Drive
 #table(columns:(1fr,2fr),stroke:none, [#figure(image("../../Photos/HDrive.png"),caption:[A basic model of UKentucky's H-Drive \ Source: Purdue Sigbots])],[This drivetrain is similar to the Tank Drive - the only differentiating factor is additional horizontal wheel in the center of the chassis.
@@ -88,7 +90,7 @@ There are several potential drivetrain types we are considering for use in Overr
   [],
   [Generally slow],
   [],
-  [High motor usage for relatively low power output]
+  [High motor usage for relatively low power output (not viable for override)]
 
 )
 ])
@@ -133,15 +135,13 @@ There are several potential drivetrain types we are considering for use in Overr
   align: left,
   [High maneuverability],
   [Difficult to assemble],
-  [Unique],
+  [Allows strafing],
   [Difficult to program basic functions],
   [Balanced speed and torque output in all directions],
   [Less space efficient than Tank Drive],
   [Easier to simulate in programs due to its holonomic nature],
   [Minimal traction],
-  [Easier to operate\*],
-  [],
-  [Allows strafing]
+  
 )
 ])
 \*Some may prefer the controls of a holonomic drive over Tank Drive, but this can come down to preference. However, it is certain that X-Drives offer the most freedom of movement.
@@ -160,13 +160,12 @@ There are several potential drivetrain types we are considering for use in Overr
   align: left,
   [Quick repositioning],
   [Less torque than other options],
-  [Unique],
-  [2 motors are not being constantly utilized],
-  [Agility of an x drive with strength of a tank drive],
-  [],
-  [Omni directional],
-  [],
   [Allows strafing],
+  [2 motors are not being constantly utilized],
+  [Agility of an x drive with some strength of a tank drive],
+  [Difficult to assemble],
+  [Omni directional],
+  [High motor count makes it unusable for Override],
 )
 ])
 
@@ -181,7 +180,7 @@ There are several potential drivetrain types we are considering for use in Overr
 ),
    [Eddie],[26/06/25]))])
 #set heading(outlined: true)
-== Wheel Size Analysis & Comparison - DI
+== Wheel Size Analysis & Comparison
 
 While different wheel sizes can be geared to produce the same speed for a robot, the size of wheels still matters for a couple of factors:
 \
@@ -198,7 +197,7 @@ Since moment of inertia is both proportional to torque and inversely proportiona
 \
 *Center of Gravity and Obstacle Traversal*
 \
-Larger wheels generally lift a robot's base marginally higher than smaller wheels, resulting in a higher center of gravity. This is important because it can affect whether a robot tips over easily when experiencing sudden changes in acceleration (or high amounts of jerk). An elevated base as a result of larger wheels can also allow for greater ground clearance, which influences a robot's ability to traverse obstacles. 
+Larger wheels generally lift a robot's base marginally higher than smaller wheels, resulting in a higher center of gravity. This is important because it can affect whether a robot tips over easily when experiencing sudden changes in acceleration (or high amounts of jerk).
 \
 \
 // hey eddie, youre literally using an app made to write math equations, you can just write the equation out instead of putting an image
@@ -232,8 +231,7 @@ Larger wheels generally lift a robot's base marginally higher than smaller wheel
   [Higher top speed potential],
   r,
   g,
-  [Better obstacle traversal],
-  r,
+  
   g,
  
 )
