@@ -232,6 +232,44 @@ Larger wheels generally lift a robot's base marginally higher than smaller wheel
   r,
   g,
   
-  g,
  
 )
+
+== Decision Matrix - DP
+
+#set heading(outlined:false)
+\
+To determine the best drivetrain design for our early-season robot, we decided to utilize a decision matrix to weigh the pros and cons of every drivetrain and determine what's most suitable for our strategy. These decision matrixes will be used all throughout the rest of the notebook during the Develop and Plan stage to help us with our decision-making process.
+\
+\
+Considering our Success Criteria for the drivetrain, we have come up with the following, ranking the performance of each drivetrain for every criterion from a scale from 1 to 10, 10 being the best at its job for said category:
+\
+\
+
+#let y = table.cell(
+  fill: green.lighten(60%),
+)[\ ]
+#let n = table.cell(
+  fill: red.lighten(60%),
+)[\ ]
+
+#table(  
+  fill: (x, y) =>
+    if y == 0 or x == 0 {rgb("D30504").lighten(40%)} ,
+  columns: (1fr, 1fr,1fr,1fr,1fr,1fr,1fr),
+  inset: 10pt,
+  table.header([*Success Criteria*], [*Tank Drive*], [*H-Drive*], [*Swivel  Drive*], [*Mecanum Drive*], [*X-Drive*],[*Asterisk Drive*],
+  
+),
+[Flexibility],[7],[8],[10],[8],[9],[10],
+[Ease of use for driver],[10],[8],[4],[8],[6],[7],
+[Structural integrity],[10],[8],[2],[8],[5],[8],
+[Resistance to pushing],[8],[5],[3],[5],[5],[7],
+[Pushing power],[10],[7],[3],[7],[5],[8],
+[Space efficiency],[8],[6],[4],[7],[8],[8],
+[Motor flexibility],[10],[4],[2],[5],[5],[7],
+[Total score],[63],[46],[28],[48],[43],[55],
+[Best Solution],y,n,n,n,n,y
+)
+\
+Since the tank drive scores the highest out of all options, we will use it. We intend on creating a 44 W drivetrain to reserve extra power for the lift if needed, but we will attempt to design the drivetrain such that we can implement additional 5.5 W motors if they are available for use.
