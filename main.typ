@@ -8,7 +8,6 @@
 //content
 #include "sections/designprocess.typ"
 #pagebreak()
-
 #include "sections/analysis.typ"
 #pagebreak()
 #include "sections/strategy.typ"
