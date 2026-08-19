@@ -3,10 +3,12 @@
 #import "/sections/glossary.typ": *
 
 #show: project.with()
-
+#include "sections/prog/innovate.typ"
+#pagebreak()
 //content
 #include "sections/designprocess.typ"
 #pagebreak()
+
 #include "sections/analysis.typ"
 #pagebreak()
 #include "sections/strategy.typ"
