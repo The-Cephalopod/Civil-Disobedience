@@ -21,7 +21,7 @@ table.header([*Contributor*], [*Date*],
 There are several potential drivetrain types we are considering for use in Override:
 
 === Tank Drive
-#table(columns:(1fr,2fr),stroke:none, [#figure(image("../Photos/RobustTankDrive.PNG"),caption:[Model of my team (86832B Robust)'s Tank Drive from High Stakes last year])],[This drivetrain consists of a series of wheels placed on each side of the robot, with motors controlling each respective side allowing for forward, backward, and turning motion.
+#table(columns:(1fr,2fr),stroke:none, [#figure(image("../../Photos/RobustTankDrive.PNG"),caption:[Model of my team (86832B Robust)'s Tank Drive from High Stakes last year])],[This drivetrain consists of a series of wheels placed on each side of the robot, with motors controlling each respective side allowing for forward, backward, and turning motion.
 
 #table(
   columns: (1fr, 1fr),
@@ -46,7 +46,7 @@ There are several potential drivetrain types we are considering for use in Overr
 \* This will be elaborated on further in the "Wheel Size Analysis & Comparison - DI" Section.
 
 === H-Drive
-#table(columns:(1fr,2fr),stroke:none, [#figure(image("../Photos/HDrive.png"),caption:[A basic model of UKentucky's H-Drive \ Source: Purdue Sigbots])],[This drivetrain is similar to the Tank Drive - the only differentiating factor is additional horizontal wheel in the center of the chassis.
+#table(columns:(1fr,2fr),stroke:none, [#figure(image("../../Photos/HDrive.png"),caption:[A basic model of UKentucky's H-Drive \ Source: Purdue Sigbots])],[This drivetrain is similar to the Tank Drive - the only differentiating factor is additional horizontal wheel in the center of the chassis.
 
 #table(
   columns: (1fr, 1fr),
@@ -70,7 +70,7 @@ There are several potential drivetrain types we are considering for use in Overr
 ])
 
 === Swivel Drive
-#table(columns:(1fr,2fr),stroke:none, [#figure(image("../Photos/SwivelDrive.png"),caption:[A swivel drive posted to the VEX Forums])],[Like an advanced office chair, this drivetrain consists of four wheels that are powered by two motors: One to power the wheel, and one to change the bearing of the wheel.
+#table(columns:(1fr,2fr),stroke:none, [#figure(image("../../Photos/SwivelDrive.png"),caption:[A swivel drive posted to the VEX Forums])],[Like an advanced office chair, this drivetrain consists of four wheels that are powered by two motors: One to power the wheel, and one to change the bearing of the wheel.
 
 #table(
   columns: (1fr, 1fr),
