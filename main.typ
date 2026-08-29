@@ -29,4 +29,6 @@
 #pagebreak()
 #include "sections/prog/pathfinding.typ"
 #pagebreak()
+#include "sections/prog/user_interface/ui_di.typ"
+#pagebreak()
 #bibliography("sections/resources/bibliography.bib", style: "ieee", full: true)
