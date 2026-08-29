@@ -86,7 +86,7 @@ The debug screen has a change of shade in motor icons to signify the temperature
   align: horizon,
   [
     #figure(
-      image("../../../Photos/EZ_PID.png", width: 100%),
+      image("../../../Photos/Ez_PID.png", width: 100%),
       caption: [EZ-Autons PID Calibration Reference],
     )
   ],
