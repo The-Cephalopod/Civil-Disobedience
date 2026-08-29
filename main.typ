@@ -31,4 +31,6 @@
 #pagebreak()
 #include "sections/prog/user_interface/ui_di.typ"
 #pagebreak()
+#include "sections/prog/user_interface/ui_dp.typ"
+#pagebreak()
 #bibliography("sections/resources/bibliography.bib", style: "ieee", full: true)
