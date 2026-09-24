@@ -27,7 +27,11 @@
 #pagebreak()
 #include "sections/claw/clawmech_dp.typ"
 #pagebreak()
-#include "sections/prog/pathfinding.typ"
+#include "sections/prog/pathfindingdi.typ"
+#pagebreak()
+#include "sections/prog/pathfindingdp.typ"
+#pagebreak()
+#include "sections/prog/pathfindingci.typ"
 #pagebreak()
 #include "sections/prog/user_interface/ui_di.typ"
 #pagebreak()

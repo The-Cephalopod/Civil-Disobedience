@@ -1,6 +1,6 @@
 #import "../../template.typ": *
 #set page(header: context[
-  #align(center,pad(y: 3pt,image("../resources/Cycle1Icon.png",height:80%)))
+  #align(center,pad(y: 3pt,image("`",height:80%)))
   #pad(y: -30pt, strong(counter(page).display("1")))
   #align(right, "86832A = Wait Look Wait")
       #line(length: 100%)],)
