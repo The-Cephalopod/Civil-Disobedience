@@ -2,7 +2,7 @@
 #set page(header: context[
   #align(center,pad(y: 3pt,image("../resources/Cycle1Icon.png",height:80%)))
   #pad(y: -30pt, strong(counter(page).display("1")))
-  #align(right, "86832A = Wait Look Wait")
+  #align(right, "60000A = Civil disobedience")
       #line(length: 100%)],)
 #set page(background: move(dy:390pt, dx: 255pt,
   text(80pt, fill: nDI.lighten(40%), font: "Roboto Mono")[
@@ -11,7 +11,9 @@
 
 == Selecting a solution
 The solution includes an adaptation of a heuristic called Square-root decomposition. Usually it works on splitting an array into blocks of the length equal to a certain length, such that the number of blocks is equal to the length of a single block, meaning that you can pre-calculate the values for the blocks, and for a query on indexes from l to r, when the elements of the whole block are inside the boundaries, instead of calculating the values by hand, we can use pre-recorded values of the entire block:\
-(INSERT THE THINGY yk)\
+#figure(
+  image("SQRT.png"), caption : "SQRT decomposition principles"
+)
 Even though this is the main practical use of the heuristic, all of its interpretations can fall into one quote:\ 
 	"Divide the problem into blocks: large enough to keep the number of blocks small, while small enough to keep the work inside each group easy."\
 Turns out that a normal vex foam tile fits all of the requirements, simplifying the task significantly.

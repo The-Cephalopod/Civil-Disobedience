@@ -4,10 +4,7 @@
   #pad(y: -30pt, strong(counter(page).display("1")))
   #align(right, "60000A = Civil disobedience")
       #line(length: 100%)],)
-#set page(background: move(dy:390pt, dx: 255pt,
-  text(80pt, fill: nDI.lighten(40%), font: "Roboto Mono")[
-     *DI* 
-  ]))
+
   
 #set page(footer:[#pad(y: -20pt, table(
   columns: 2,
