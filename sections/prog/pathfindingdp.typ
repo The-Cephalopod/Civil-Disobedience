@@ -34,11 +34,7 @@ We can use the integrated PID-based LemLib's `moveToPoint` function, but we need
 
 The center tiles are marked red, as their center is obstructed by the middle goal; therefore, the robot cannot be placed into the center without touching the goal. The tiles underneath the parking zone are technically considered semi-achievable, but in a real match, engaging with the parking zone is risky, as it is not as consistent as normal driving and possesses a risk of lifting off the ground, completely breaking the odometry; therefore, they will be treated as unachievable.
 
-*Tile Coordinate Calculation:* \
-We will use global coordinates, with the top-left corner having the coordinates $(0; 0)$ and use inches as the main unit. Every foam tile is 24 by 24 inches long; therefore, the top-left corner tile's center will have the coordinates $(12; 12)$, as it is offset from the sides by half of a tile's length. Every adjacent tile will have the coordinates of the current tile $+24$ inches in one of the directions, resulting in a recursive formula:
 
-$ x[i] = x[i-1] + 24 $
-$ y[i] = y[i-1] + 24 $
 
 where $x[i]$ corresponds to the tile which has $i$ tiles to its left, and $y[i]$ corresponds to a tile with $i$ tiles above it.
 
@@ -69,11 +65,7 @@ $ sqrt(1^2 + 1^2) = sqrt(2) approx 1.4142 $
 
 while the distance between two adjacent tile centers would be exactly $1$. The penalty for every turn is set equal to $1$, making the algorithm sometimes prefer a longer path with fewer turns, while still picking a viable trajectory that is not too long.
 
-*The Greedy Principle:* \
-Dijkstra is a greedy algorithm that uses a Priority Queue to always explore the "cheapest" known node first. This ensures that once a node is processed, the path found to it is mathematically guaranteed to be the shortest possible under the given edge weights.
 
-*Penalty Implementation:* \
-In this specific implementation, we modify the edge weight equation to properly account for physical mechanical constraints:
 
 $ text("Weight") = text("Euclidean Distance") + 1.0 " " (text("Turn / Segment Penalty")) $
 
@@ -84,48 +76,3 @@ By adding a $1.0$ penalty to every edge, Dijkstra is forced to minimize not just
 
 After completing the first two calculation steps, the destination coordinate path is now within a localized one-tile proximity of the robot chassis. After that, the only thing left is to perform one final linear movement to hit the target destination coordinates.
 
-//#subsection("10.5 Applying the Algorithm")
-
-Outside of real-time driver control override variables, the pathfinding algorithm also helps significantly in making the structural layout for autonomous coding skills challenges simpler, as shown in this trajectory model:
-
-//#image_placeholder("Visual mapping comparison showing manual multi-segment trajectories vs. automated pathfinder generation vectors around obstacles")
-
-Red arrows stand for coding the specific coordinate paths manually. It would require 5 distinct movements, heavily embedded with coordinate decimals, just to route around a single long goal structure. With our integrated pathfinding algorithm, it takes just 2 clean lines of code: one for match loading parameters and another for sweeping around and aligning with the long goal from the opposite side.
-
-
-The algorithm itself proved functional, cleanly outputting the traced path vectors correctly. However, physical movements tended to overshoot or take longer than they should because the default LemLib PID control loop constants for driving turned out to be insufficient, forcing us to execute an intentional calibration iteration. But first—we need to review how a PID controller functions.
-
-A PID controller stands for Proportional, Integral, and Derivative control. It uses three primary variables:
-
-- *Proportional gain ($k_P$):* Follows the core principle of "The closer to the target, the lower the output power". It completes the majority of the travel route, but if the constant behind it is too low, final tracking speeds will be sluggish. If it is too high, the robot will violently overshoot the target, as the speed decrease curve becomes less significant relative to deceleration distance.
-- *Integral term ($k_I$):* Addresses steady-state error. If for some reason the robot's movement is halted before reaching the exact destination (typically due to friction or a heavy game object), the Integral "remembers" that the error has existed for an extended duration and gradually increments the motor power channel. It calculates the sum of all accumulated system errors over time. The longer the robot stays away from the target, the higher the "$I$" value grows. *The Risk:* If the constant $k_I$ is set too high, it leads to Integral Windup, causing the robot to oscillate endlessly or overshoot because it accumulated excessive power while trying to get moving initially.
-- *Derivative term ($k_D$):* Acts as a physical dampener. It looks closely at the continuous rate of change of the error term to predict future systemic behavior. Its main job is to counteract the Proportional term to prevent overshooting. It senses how fast the error gap is shrinking and applies an algorithmic "braking" force to guarantee a smooth deceleration landing.
-
-#v(1em)
-#align(center)[
-  *Table 10.1: PID Tuning Parameter Impact Matrix*
-]
-#table(
-  columns: (1fr, 1.2fr, 1.2fr, 1.2fr),
-  align: center + horizon,
-  fill: (x, y) => if y == 0 { rgb("#e2e8f0") } else { none },
-  stroke: 0.5pt + rgb("#cbd5e0"),
-  [*Setting*], [*P (Proportional)*], [*I (Integral)*], [*D (Derivative)*],
-  [Too High], [Oscillates / Overshoots target], [Overshoots target violently], [Too sensitive, undershoots in extreme cases],
-  [Too Low], [Velocity too low / sluggish], [Falls 2-3 inches short of target], [Oscillates erratically around target]
-)
-
-#v(1em)
-#align(center)[
-  *Table 10.2: Chassis Calibration Iteration Log*
-]
-#table(
-  columns: (0.6fr, 0.5fr, 0.5fr, 0.5fr, 1.5fr, 1.5fr),
-  align: center + horizon,
-  fill: (x, y) => if y == 0 { rgb("#e2e8f0") } else { none },
-  stroke: 0.5pt + rgb("#cbd5e0"),
-  [*Iter.*], [*$k_P$*], [*$k_I$*], [*$k_D$*], [*Observed Problem*], [*Applied Solution*],
-  [0 (def)], [10], [0], [0], [Too fast, small overshooting issues], [Added derivative term $k_D$ to system],
-  [1], [10], [0], [1], [Overshooting solved but speed is unsafe; high risk of inaccurate movements], [Reduced proportional term $k_P$],
-  [2], [6], [0], [1], [Very slow, tracking undershoots target consistently], [Iterating on minor adjustments...]
-)
