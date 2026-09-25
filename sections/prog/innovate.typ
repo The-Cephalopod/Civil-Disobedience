@@ -2,7 +2,7 @@
 #set page(header: context[
   #align(center,pad(y: 3pt,image("../resources/Cycle1Icon.png",height:80%)))
   #pad(y: -30pt, strong(counter(page).display("1")))
-  #align(right, "86832A = Wait Look Wait")
+  #align(right, "60000A = Civil disobedience")
       #line(length: 100%)],)
 #set page(background: move(dy:390pt, dx: 255pt,
   text(80pt, fill: nDI.lighten(40%), font: "Roboto Mono")[
@@ -16,7 +16,7 @@
 ),
    [Imran],[17/08/26],))])
 = Innovate award submission form
-== Team number: 86832A
+== Team number: 60000A
 == Description:
 - In override, the field had 9 goals hard-mounted to the field area. Navigating between the goals in autonomous mode requires precise navigation and path planning. The team developed a path planning algorithm that allowed the robot to navigate between the goals in autonomous mode with high precision. The algorithm takes into account the position of the robot, the position of the goals, and then plans an optimal path using Dijkstra's algorithm optimized by square root decomposition heuristic. The algorithm was tested extensively in simulation and on the field, and it was found to be highly effective in allowing the robot to navigate between the goals in autonomous mode.
 == Locating pathfinding:
